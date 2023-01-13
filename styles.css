@@ -1,0 +1,28 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container {
+    display: flex;
+    max-width: 960px;
+    max-height: 960px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.gridSquare {
+    height: 50px;
+    width: 50px;
+    outline: green solid 1px;
+    flex: 0 1 25%;
+    
+}
