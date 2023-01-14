@@ -22,7 +22,12 @@ body {
 .gridSquare {
     height: 50px;
     width: 50px;
-    outline: green solid 1px;
+    outline: grey solid 1px;
     flex: 0 1 25%;
     
+}
+
+
+.hover {
+    background-color: rgb(43, 49, 49);
 }
