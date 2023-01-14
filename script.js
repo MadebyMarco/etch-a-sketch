@@ -9,11 +9,10 @@ function createGrid(number) {
 };
 const gridSquares = document.querySelectorAll('.gridSquare');
 
-gridSquares.forEach(square => square.addEventListener('mouseover', () => {
-this.classList.add('hover');
+gridSquares.forEach(square => square.addEventListener('mouseover', (e) => {
+    e.target.classList.add('hover');
 }));
 };
-
 
 
 /** How do we recognize the mouse is hovering? Need an event listener on each square for hover
