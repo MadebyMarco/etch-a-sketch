@@ -2,12 +2,25 @@ const gridContainer = document.querySelector('.grid-container');
 let counter = 0;
 function createGrid(number) {
 
-    number = prompt('Enter a number greater than 16 but less than 100', 16);
-
+    number = prompt('Enter the number of squares per side for the new grid', 16);
+    /** 
     for(i = 0; i < number; i++) {
     let gridSquare = gridContainer.appendChild(document.createElement('div'));
     gridSquare.classList.add('gridSquare');
     gridSquare.textContent = i + 1;
+    };
+*/
+    //creates grid squares, gives it a number and class
+    
+    for(rowCounter = 0; rowCounter  < number; rowCounter ++) {
+    let rowContainer = document.createElement('div');
+    rowContainer.classList.add(`row${rowCounter + 1}`);
+    gridContainer.appendChild(rowContainer);
+    for(i = 0; i < number; i++) {
+        let gridSquare = rowContainer.appendChild(document.createElement('div'));
+        gridSquare.classList.add('gridSquare');
+        gridSquare.textContent = i + 1;
+        };
     };
 
 const gridSquares = document.querySelectorAll('.gridSquare');
@@ -15,6 +28,8 @@ const gridSquares = document.querySelectorAll('.gridSquare');
 gridSquares.forEach(square => square.addEventListener('mouseover', (e) => {
     e.target.classList.add('hover');
 }));
+//adds a class of hover to a square thats hovered on
+
 counter++;
 };
 
@@ -26,7 +41,13 @@ newGridButton.addEventListener('click', () => {
         const gridSquares = document.querySelectorAll('.gridSquare');
         gridSquares.forEach(square => square.remove());
     }
+    //the counter prevents the 1st grid from being wiped, the rest removes the previous grids
     createGrid();
    
     
 });
+
+//grid ideas
+
+//Ideas 1: take number, create a new div inside of gridContainer with rows.length = number,
+// repeat this step in a for loop with i < number, giving us an even grid
