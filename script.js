@@ -14,12 +14,12 @@ function createGrid(number) {
     
     for(rowCounter = 0; rowCounter  < number; rowCounter ++) {
     let rowContainer = document.createElement('div');
-    rowContainer.classList.add(`row${rowCounter + 1}`);
+    rowContainer.classList.add('row');
     gridContainer.appendChild(rowContainer);
     for(i = 0; i < number; i++) {
         let gridSquare = rowContainer.appendChild(document.createElement('div'));
         gridSquare.classList.add('gridSquare');
-        gridSquare.textContent = i + 1;
+        //gridSquare.textContent = i + 1;
         };
     };
 
@@ -40,6 +40,9 @@ newGridButton.addEventListener('click', () => {
     if (counter > 0) {
         const gridSquares = document.querySelectorAll('.gridSquare');
         gridSquares.forEach(square => square.remove());
+
+        const rows = document.querySelectorAll('.row');
+        rows.forEach(row => row.remove());
     }
     //the counter prevents the 1st grid from being wiped, the rest removes the previous grids
     createGrid();

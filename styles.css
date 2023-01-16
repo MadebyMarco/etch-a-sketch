@@ -3,36 +3,44 @@ html {
 }
 
 body {
-    height: 100%;
-    width: 100%;
+    background-color: #d7edc9;
     margin: 0;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     gap: 100px;
+    min-width: 0;
 }
 
+button {
+    padding: 8px 16px;
+    font-weight: 700;
+    margin-top: 50px;
+}
 .grid-container {
     display: flex;
-    max-width: 960px;
-    max-height: 960px;
-    flex-flow: row nowrap;
+    max-width: 1000px;
+    max-height: 1000px;
+    flex-flow: column nowrap;
     justify-content: center;
+    align-items: center;
 }
 
 .gridSquare {
-    width: 50px;
-    height: 50px;
-    outline: grey solid 1px;
+    height: 15px;
+    width: 15px;
+    outline: rgb(255, 255, 255) solid 1px;
+    background: rgb(196, 152, 152);
     min-width: 0;
-    flex: 0 1 50px;
+    flex: 0 1 15px;
 }
 
-.rows {
+.row {
     display: flex;
+    flex-flow: row nowrap;
 }
 
 .hover {
-    background-color: rgb(43, 49, 49);
+    background-color: rgb(42, 54, 54);
 }
