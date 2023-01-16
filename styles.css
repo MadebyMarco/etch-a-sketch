@@ -6,7 +6,7 @@ body {
     background-color: #d7edc9;
     margin: 0;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: center;
     gap: 100px;
@@ -25,15 +25,12 @@ button {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .gridSquare {
-    height: 15px;
-    width: 15px;
     outline: rgb(255, 255, 255) solid 1px;
     background: rgb(196, 152, 152);
-    min-width: 0;
-    flex: 0 1 15px;
 }
 
 .row {

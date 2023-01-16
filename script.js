@@ -1,8 +1,10 @@
 const gridContainer = document.querySelector('.grid-container');
 let counter = 0;
+let oppacity = 10;
+
 function createGrid(number) {
 
-    number = prompt('Enter the number of squares per side for the new grid', 16);
+    number = prompt('Enter the number of squares per side for the new grid', 4);
     /** 
     for(i = 0; i < number; i++) {
     let gridSquare = gridContainer.appendChild(document.createElement('div'));
@@ -11,14 +13,19 @@ function createGrid(number) {
     };
 */
     //creates grid squares, gives it a number and class
-    
-    for(rowCounter = 0; rowCounter  < number; rowCounter ++) {
+    //!!! ^^^^ old code but here for historical reference ^^^^
+    let gridSize = 1000 / number;
+
+    for(let rowCounter = 0; rowCounter  < number; rowCounter ++) {
     let rowContainer = document.createElement('div');
     rowContainer.classList.add('row');
     gridContainer.appendChild(rowContainer);
+    //creates rows
     for(i = 0; i < number; i++) {
         let gridSquare = rowContainer.appendChild(document.createElement('div'));
         gridSquare.classList.add('gridSquare');
+        gridSquare.style.height = `${gridSize}px`;
+        gridSquare.style.width = `${gridSize}px`;
         //gridSquare.textContent = i + 1;
         };
     };
@@ -54,3 +61,6 @@ newGridButton.addEventListener('click', () => {
 
 //Ideas 1: take number, create a new div inside of gridContainer with rows.length = number,
 // repeat this step in a for loop with i < number, giving us an even grid
+
+
+//Problem: Need gridSquares to size dynamically. 
